@@ -1,0 +1,27 @@
+﻿version: '3.0'
+services:
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: Store
+      MYSQL_USER: docker
+      MYSQL_PASSWORD: P@ssw0rd
+    ports:
+      - "3306:3306"
+    volumes:
+      - store-data:/var/lib/mysql
+
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    environment:
+    - DB_TYPE=MySQL
+    - CONNECTION_STRING="Server=db;Database=Store;User=docker;Password=P@ssw0rd;Port=3306;"
+
+volumes:
+  store-data:

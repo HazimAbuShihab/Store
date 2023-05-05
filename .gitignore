@@ -1,0 +1,47 @@
+# Build artifacts
+bin/
+obj/
+**/*.dll
+**/*.exe
+**/*.pdb
+**/*.dll.config
+**/*.runtimeconfig.json
+
+# Visual Studio files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.vsp
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Oo]bj/
+[Bb]in/
+
+# MSTest test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# NUNIT
+*.VisualState.xml
+TestResult.xml
+nunit-*.xml
+
+# Build Results of an ATL Project
+[Dd]ebugPS/
+[Rr]eleasePS/
+dlldata.c
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+**/Properties/launchSettings.json
+
+# Visual Studio Code
+.vscode/
