@@ -19,7 +19,7 @@ namespace Store_Core7.Controllers
             _authService = authService;
         }
         [HttpGet]
-        [ActionName("GetAllLogs")]
+        [ActionName("")]
         [Authorize(Roles = "Admin,User")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<List<CategoryModel>>))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ActionResult<DefaultPayload>))]
@@ -45,7 +45,7 @@ namespace Store_Core7.Controllers
         }
 
         [HttpGet]
-        [ActionName("GetLog")]
+        [ActionName("GetById")]
         [Authorize(Roles = "Admin,User")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<CategoryModel>))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ActionResult<DefaultPayload>))]

@@ -20,7 +20,7 @@ namespace Store_Core7.Controllers
         }
 
         [HttpGet]
-        [ActionName("GetAllCategories")]
+        [ActionName("")]
         [Authorize(Roles = "Admin,User,Customer")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<List<CategoryModel>>))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ActionResult<DefaultPayload>))]
@@ -46,7 +46,7 @@ namespace Store_Core7.Controllers
         }
 
         [HttpGet]
-        [ActionName("GetCategory")]
+        [ActionName("GetById")]
         [Authorize(Roles = "Admin,User,Customer")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<CategoryModel>))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ActionResult<DefaultPayload>))]
@@ -78,7 +78,7 @@ namespace Store_Core7.Controllers
         }
 
         [HttpPost]
-        [ActionName("AddCategory")]
+        [ActionName("")]
         [Authorize(Roles = "Admin,User")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IActionResult))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(ActionResult<DefaultPayload>))]
@@ -114,7 +114,7 @@ namespace Store_Core7.Controllers
         }
 
         [HttpPut]
-        [ActionName("UpdateCategory")]
+        [ActionName("")]
         [Authorize(Roles = "Admin,User")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<DefaultPayload>))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(ActionResult<DefaultPayload>))]
@@ -152,7 +152,7 @@ namespace Store_Core7.Controllers
         }
 
         [HttpDelete]
-        [ActionName("DeleteCategory")]
+        [ActionName("")]
         [Authorize(Roles = "Admin,User")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<DefaultPayload>))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(ActionResult<DefaultPayload>))]

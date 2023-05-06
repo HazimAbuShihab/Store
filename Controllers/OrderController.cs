@@ -23,7 +23,7 @@ namespace Store_Core7.Controllers
             _dbContext = dbContext;
         }
         [HttpGet]
-        [ActionName("GetAllOrders")]
+        [ActionName("")]
         [Authorize(Roles = "Admin,User,Customer")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<List<CategoryModel>>))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ActionResult<DefaultPayload>))]
@@ -49,7 +49,7 @@ namespace Store_Core7.Controllers
         }
 
         [HttpGet]
-        [ActionName("GetOrder")]
+        [ActionName("GetById")]
         [Authorize(Roles = "Admin,User,Customer")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<CategoryModel>))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ActionResult<DefaultPayload>))]
@@ -81,7 +81,7 @@ namespace Store_Core7.Controllers
         }
 
         [HttpPost]
-        [ActionName("AddOrder")]
+        [ActionName("")]
         [Authorize(Roles = "Admin,User,Customer")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IActionResult))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(ActionResult<DefaultPayload>))]

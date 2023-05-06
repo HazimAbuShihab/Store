@@ -8,7 +8,7 @@ using Store_Core7.Utils;
 
 namespace Store_Core7.Controllers
 {
-    [Route("api/Auth/[action]")]
+    [Route("api/Auth/Role/[action]")]
     [ApiController]
     public class RoleController : ControllerBase
     {
@@ -23,7 +23,7 @@ namespace Store_Core7.Controllers
         }
 
         [HttpGet]
-        [ActionName("GetAllRole")]
+        [ActionName("")]
         [Authorize(Roles = "Admin,User")]
         public async Task<IActionResult> GetAllRole([FromHeader] string Authorization, [FromQuery] int page = 1, [FromQuery] int size = 10)
         {
@@ -47,7 +47,7 @@ namespace Store_Core7.Controllers
         }
 
         [HttpGet]
-        [ActionName("GetRole")]
+        [ActionName("GetById")]
         [Authorize(Roles = "Admin,User")]
         public async Task<IActionResult> GetRole([FromHeader] string Authorization, [FromQuery] string id)
         {
@@ -77,7 +77,7 @@ namespace Store_Core7.Controllers
         }
 
         [HttpGet]
-        [ActionName("GetUserRoles")]
+        [ActionName("GetByUserId")]
         [Authorize(Roles = "Admin,User")]
         public async Task<IActionResult> GetUserRoles([FromHeader] string Authorization, [FromQuery] string userId)
         {
@@ -102,7 +102,7 @@ namespace Store_Core7.Controllers
         }
 
         [HttpPut]
-        [ActionName("UpdateRole")]
+        [ActionName("")]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> UpdateRole([FromHeader] string Authorization, [FromQuery] string id, [FromQuery] string roleNewName)
         {

@@ -21,7 +21,7 @@ namespace Store_Core7.Controllers
         }
 
         [HttpGet]
-        [ActionName("GetAllSystemSettings")]
+        [ActionName("")]
         [Authorize(Roles = "Admin,User")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<List<CategoryModel>>))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ActionResult<DefaultPayload>))]
@@ -47,7 +47,7 @@ namespace Store_Core7.Controllers
         }
 
         [HttpGet]
-        [ActionName("GetSystemSetting")]
+        [ActionName("GetById")]
         [Authorize(Roles = "Admin,User")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<CategoryModel>))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ActionResult<DefaultPayload>))]
@@ -79,7 +79,7 @@ namespace Store_Core7.Controllers
         }
 
         [HttpPost]
-        [ActionName("AddSystemSetting")]
+        [ActionName("")]
         [Authorize(Roles = "Admin,User")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IActionResult))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(ActionResult<DefaultPayload>))]
@@ -120,7 +120,7 @@ namespace Store_Core7.Controllers
         }
 
         [HttpPut]
-        [ActionName("UpdateSystemSetting")]
+        [ActionName("")]
         [Authorize(Roles = "Admin,User")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<DefaultPayload>))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(ActionResult<DefaultPayload>))]
@@ -159,7 +159,7 @@ namespace Store_Core7.Controllers
         }
 
         [HttpDelete]
-        [ActionName("DeleteSystemSetting")]
+        [ActionName("")]
         [Authorize(Roles = "Admin")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<DefaultPayload>))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(ActionResult<DefaultPayload>))]

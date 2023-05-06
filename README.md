@@ -80,12 +80,12 @@ and Customer. Each role has its own set of permissions and access levels.
  |---------|------------|------|----|
  |POST|**_`/Login`_**|Login with an existing user account|Anonymous|
  |POST|**_`/SignUp`_**|Register a new user account|Anonymous|
- |GET|**_`/GetAllRole?page={page}&size={size}`_**|Retrieve a list of all roles|Admin & User|
- |GET|**_`/GetRole?id={id}`_**|Retrieve a specific role by its ID|Admin & User|
- |GET|**_`/GetUserRoles?userId={userId}`_**|Retrieve a user roles by its ID|Admin & User|
- |PUT|**_`/UpdateRole?id={id}&roleNewName={roleNewName}`_**| Update an existing role|Admin|
- |POST|**_`/AddUserRole`_**|Add a role to a user|Admin|
- |DELETE|**_`/RemoveRoleFromUser`_**| Remove a role from a user|Admin|
+ |GET|**_`/Role?page={page}&size={size}`_**|Retrieve a list of all roles|Admin & User|
+ |GET|**_`/Role/GetById?id={id}`_**|Retrieve a specific role by its ID|Admin & User|
+ |GET|**_`/Role/GetByUserId?userId={userId}`_**|Retrieve a user roles by its ID|Admin & User|
+ |PUT|**_`/Role?id={id}&roleNewName={roleNewName}`_**| Update an existing role|Admin|
+ |POST|**_`/Role/AddUserRole`_**|Add a role to a user|Admin|
+ |DELETE|**_`/Role/RemoveRoleFromUser`_**| Remove a role from a user|Admin|
 
  **_Payloads:_**
  
@@ -124,11 +124,11 @@ endpoint.
 
 |HTTP Verb|Endpoint URL|Action|Role|
 |---------|------------|------|----|
-|GET |**_`/GetAllCategories?page={page}&size={size}`_**|Retrieve a list of all categories|Admin & User & Customer|
-|GET |**_`/GetCategory?id={id}`_**|Retrieve a specific category by its ID	|Admin & User & Customer|
-|POST |**_`/AddCategory`_**|Add a Category|Admin & User|
-|PUT |**_`/UpdateCategory?id={id}`_**|Update an existing category|Admin & User|
-|DELETE |**_`/DeleteCategory?id={id}`_**| Remove an existing category|Admin & User|
+|GET |**_`/Category?page={page}&size={size}`_**|Retrieve a list of all categories|Admin & User & Customer|
+|GET |**_`/Category/GetById?id={id}`_**|Retrieve a specific category by its ID	|Admin & User & Customer|
+|POST |**_`/Category`_**|Add a Category|Admin & User|
+|PUT |**_`/Category?id={id}`_**|Update an existing category|Admin & User|
+|DELETE |**_`/Category?id={id}`_**| Remove an existing category|Admin & User|
 
  **_Payloads:_**
  
@@ -148,11 +148,11 @@ endpoint.
 
 |HTTP Verb|Endpoint URL|Action|Role|
 |---------|------------|------|----|
-|GET |**_`/GetAllProducts?page={page}&size={size}`_**|Retrieve a list of all Products|Admin & User & Customer|
-|GET |**_`/GetProduct?id={id}`_**|Retrieve a specific Product by its ID	|Admin & User & Customer|
-|POST |**_`/AddProduct`_**|Add a Product|Admin & User|
-|PUT |**_`/UpdateProduct?id={id}`_**|Update an existing Product|Admin & User|
-|DELETE |**_`/DeleteProduct?id={id}`_**| Remove an existing Product|Admin & User|
+|GET |**_`/Product?page={page}&size={size}`_**|Retrieve a list of all Products|Admin & User & Customer|
+|GET |**_`/Product/GetById?id={id}`_**|Retrieve a specific Product by its ID	|Admin & User & Customer|
+|POST |**_`/Product`_**|Add a Product|Admin & User|
+|PUT |**_`/Product?id={id}`_**|Update an existing Product|Admin & User|
+|DELETE |**_`/Product?id={id}`_**| Remove an existing Product|Admin & User|
 
  **_Payloads:_**
  
@@ -180,9 +180,9 @@ endpoint.
 
 |HTTP Verb|Endpoint URL|Action|Role|
 |---------|------------|------|----|
-|GET |`/GetAllUserOrders?userId={userId}`|Retrieve a list of all orders|Admin & User & Customer|
-|GET |`/GetOrder?guid={guid}`|Retrieve a specific Product by its GUID|Admin & User & Customer|
-|POST |`/AddOrder`|Add an Order|Admin & User|
+|GET |`/Order?userId={userId}`|Retrieve a list of all orders|Admin & User & Customer|
+|GET |`/Order/GetById?guid={guid}`|Retrieve a specific Product by its GUID|Admin & User & Customer|
+|POST |`/Order`|Add an Order|Admin & User|
 
  **_Payloads:_**
  1.  **_`/AddOrder`_**:  
@@ -200,7 +200,7 @@ endpoint.
 }
  ```
 ---------------------------------------
- ### **_/SystemSettings_**
+ ### **_/SystemSetting_**
 To authorize requests to protected endpoints, you need to 
 include an `Authorization` header in your request with the value of `Bearer {JWT}`. 
 The `{JWT}` placeholder should be replaced with the token obtained from the login
@@ -208,11 +208,11 @@ endpoint.
 
 |HTTP Verb|Endpoint URL|Action|Role|
 |---------|------------|------|----|
-|GET |**_`/GetAllSystemSettings?page={page}&size={size}`_**|Retrieve a list of all SystemSettings|Admin & User|
-|GET |**_`/GetSystemSetting?id={id}`_**|Retrieve a specific GetSystemSetting by its ID	|Admin & User|
-|POST |**_`/AddSystemSetting`_**|Add a SystemSetting|Admin & User|
-|PUT |**_`/UpdateSystemSetting?id={id}`_**|Update an existing SystemSetting|Admin & User|
-|DELETE |**_`/DeleteSystemSetting?id={id}`_**| Remove an existing category|Admin|
+|GET |**_`/SystemSetting?page={page}&size={size}`_**|Retrieve a list of all SystemSettings|Admin & User|
+|GET |**_`/SystemSetting?id={id}`_**|Retrieve a specific GetSystemSetting by its ID	|Admin & User|
+|POST |**_`/SystemSetting`_**|Add a SystemSetting|Admin & User|
+|PUT |**_`/SystemSetting?id={id}`_**|Update an existing SystemSetting|Admin & User|
+|DELETE |**_`/SystemSetting?id={id}`_**| Remove an existing category|Admin|
 
  **_Payloads:_**
  1.  **_`/AddSystemSetting`_** & **_`/UpdateSystemSetting?id={id}`_**:  
@@ -231,5 +231,5 @@ endpoint.
 
 |HTTP Verb|Endpoint URL|Action|Role|
 |---------|------------|------|----|
-|GET |`/GetAllLogs?page={page}&size={size}`|Get all categories|Admin & User & Customer|
-|GET |`/GetLog?id={id}`|Register a new user account|Admin & User & Customer|
+|GET |`/Exlog?page={page}&size={size}`|Get all categories|Admin & User & Customer|
+|GET |`/Exlog/GetById?id={id}`|Register a new user account|Admin & User & Customer|
